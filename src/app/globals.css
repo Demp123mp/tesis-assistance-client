@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+.hour-styled {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+  
+
+/* Tamaño del scroll */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+ /* Estilos barra (thumb) de scroll */
+*::-webkit-scrollbar-thumb {
+  background: #3c83f680;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #3c83f680;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3c83f680;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+ /* Estilos track de scroll */
+
+*::-webkit-scrollbar-track {
+  background: #00000029;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-track:active {
+  background: #3c83f680;
+  color: hsl(220, 10%, 83%);
+  color: #0e2043;
+}
+
+.input:-internal-autofill-selected {
+  background-color: transparent !important;
+  color: inherit;
+  /* Otros estilos que desees anular o ajustar */
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --cover: 220, 10%, 83%;
+    --success: 113, 93%, 41%;
+    --hover: #3c83f680;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --cover: 220, 65%, 16%;
+    --success: 113, 54%, 50%;
+    --hover: #3c83f680;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.loader {
+  animation: rotation 1s linear infinite;
+  color: #3b82f6;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.writeText {
+  right: 0;
+  padding-bottom: 10px;
+  animation: write 2s ease-in-out alternate;
+  overflow: hidden
+}
+
+@keyframes write {
+  from { width: 0% }
+  to { width: 100% }
+}
+
+.formEnter {
+  animation: enter 0.6s;
+}
+
+.formOut {
+  animation: out 0.6s;
+}
+
+@keyframes enter {
+  0% {
+    transform: translateX(100em);
+    opacity: 0
+  }
+  50% {
+    transform: translateX(50em);
+    opacity: .3
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1
+  }
+}
+
+@keyframes out {
+  0% {
+    transform: translateX(-100em);
+    opacity: 0
+  }
+  50% {
+    transform: translateX(-50em);
+    opacity: .3
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1
+  }
+}
